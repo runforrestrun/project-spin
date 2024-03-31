@@ -32,7 +32,7 @@ jobs:
       docker-tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }},ghcr.io/${{ github.repository }}:latest
       environment: production # 👈 Make sure you created this environment in GitHub with the secrets above.
     secrets: inherit
-  
+
   deploy:
     needs: build
     runs-on: ubuntu-22.04
@@ -42,7 +42,7 @@ jobs:
     steps:
 
       - name: Get project name from repository name.
-        run: | 
+        run: |
           echo "PROJECT_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
       - uses: serversideup/github-action-docker-swarm-deploy@v1
@@ -61,4 +61,4 @@ jobs:
           DB_NAME: "${{ secrets.DB_NAME }}"
           DB_USERNAME: "${{ secrets.DB_USERNAME }}"
           DB_PASSWORD: "${{ secrets.DB_PASSWORD }}"
-          DEPLOYMENT_IMAGE_PHP: "ghcr.io/${{ github.repository }}:${{ github.ref_name }}"
+          DEPLOYMENT_IMAGE_PHP: "ghcr.io/runforrestrun/project-spin:latest"
