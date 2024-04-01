@@ -23,6 +23,6 @@ while true; do
     # Hit the endpoint to simulate traffic
     curl -s https://spin.slimspeuren.nl > /dev/null &
 
-    # Sleep for 1 second
-    sleep 0.5  # Adjust this delay based on your testing requirements
+    # Sleep for 0.002 second = 500 request p/s
+    sleep 0.002  # Adjust this delay based on your testing requirements
 done
