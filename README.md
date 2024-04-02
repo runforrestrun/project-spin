@@ -1,13 +1,15 @@
-## Testing Out Project Spin
+## Introduction
+This study project is about 
+- running a Laravel application with the best PHP docker image possible.
+- and having it set up in the most easy way for **all** environments
+- with zero downtime 
 
-Educational purpose to investigate and learn how[ Project Spin works](https://github.com/serversideup/spin)
+It seems [Spin](https://github.com/serversideup/spin) is the only qualified candidate for this job.
 
-- 
-- Laravel Deployment with zero downtime 
-- 100% Environment Replication
-- Graceful connection draining
+## Project Purpose
+Educational purpose project, learn what tools and technologies are used by [Spin](https://github.com/serversideup/spin).
 
-## Learning Points
+## Takeaways
 - Have SSH key in place to automatically logon server 
   - Create a SSH keypair with modern ```ed25519``` algorithm
   - On MacOS, if ```~/.ssh/id_ed25519``` exists, it will autoselect. Thus ```ssh root@server.com``` works automatically without need to use ```-i id_ed25519```
@@ -25,8 +27,6 @@ Educational purpose to investigate and learn how[ Project Spin works](https://gi
   - After ```spin provision``` is done and without errors, logon with 2nd user and set password.
 
 ## Misc
-
 Delete all containers and images:
-
 ```docker container rm $(docker container ls -aq) -f```
 
